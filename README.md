@@ -1,8 +1,10 @@
 # TaskBoard
 
-## Description
+## !IMPORTANT!
+The project is in its initial stage. In the near future i'll be adding new features and upgrading the old one to be more optimal.
 
-!IMPORTANT! The project is in its initial stage. In the near future i'll be adding new features and upgrading the old one to be more optimal.
+
+## Description
 
 **TaskBoard** A task board is considered to be one of the most successful tools for teamwork. 
 Whether it's for work, a side project or even the next family vacation, we helps your team stay organized.We've got the flexibility and featuresto fit any team's style.

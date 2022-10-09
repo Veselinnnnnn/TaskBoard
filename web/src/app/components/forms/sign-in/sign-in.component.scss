@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    min-height: 100%;
+    background: linear-gradient(0.375turn, #121212, #301934, #290916);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    user-select: none;
+    height: 100vh;
+    min-height: 200px;
+}
+
+.whiteBackground {
+    width: 35vw;
+    border-radius: 20px;
+    margin-left: 32.5vw;
+    margin-top: 30vh;
+    padding-bottom: 2vh;
+}
+
+.imageLogo {
+    width: 10vw;
+    height: 7vw;
+    border-radius: 20px;
+    margin-left: 12.5vw;
+    margin-top: -8vh;
+}
+
+
+input[type=text] {
+    margin-top: 1vh;
+    width: 2vw;
+    padding: 0.75vw;
+    font-size: 1vw;
+}
+
+input[type=password] {
+    width: 2vw;
+    padding: 0.75vw;
+    margin-top: 2vh;
+    font-size: 1vw;
+}
+
+.btn {
+    width: 5vw;
+    height: 2.5vw;
+    font-size: 1vw;
+}
+
+.whiteBackgroundOtherOptions {
+    margin-left: 32.5vw;
+    margin-top: 5vh;
+    width: 35vw;
+    height: 6vh;
+    border-radius: 20px;
+    background-color: white;
+    min-height: 10px;
+}
+
+.whiteBackgroundOtherOptions p {
+    padding: 1.5vh;
+    font-size: 1vw;
+}
+
+
+.whiteBackgroundOtherOptions:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.rowText {
+    font-size: 1vw;
+}
+
+input.ng-invalid {
+    border-left: 5px solid red;
+}
+
+input.ng-valid {
+    border-left: 5px solid green;
+}
+
+.errors {
+    font-size: 1vw;
+}

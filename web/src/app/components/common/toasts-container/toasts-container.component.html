@@ -1,0 +1,13 @@
+<ngb-toast
+*ngFor="let toast of toastService.toasts"
+[class]="toast.classname"
+[autohide]="true"
+[delay]="toast.delay || 2000"
+(hidden)="toastService.remove(toast)"
+>
+<ng-template [ngIf]="isTemplate(toast)" [ngIfElse]="text">
+  <ng-template [ngTemplateOutlet]="toast.textOrTpl"></ng-template>
+</ng-template>
+
+<ng-template #text><span class="fw-bold">Welcome, {{ toast.textOrTpl }}! </span>You have successfully signed in.</ng-template>
+</ngb-toast>

@@ -1,0 +1,58 @@
+<div class="container-fluid">
+    <div class="box">
+        <div class="container">
+            <div class="row ">
+                <div class="col-10">
+                    <div class="d-flex text-white leftContent">
+                        <img class="logo" src="../../assets/images/whiteLogo.png" alt="TaskBoard logo">
+                        <h4 class="mx-2">TaskBoard</h4>
+                    </div>
+                </div>
+                <div class="col-2 ">
+                    <div *ngIf="signIn===false" class="d-flex justify-content-end ">
+                        <button routerLink="/signIn" class="btn border-0 text-white">
+                            <h6>Sign in <i class="bi bi-door-open"></i></h6>
+                        </button>
+                    </div>
+                    <div *ngIf="signIn === true" ngbDropdown class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-transparent text-white border-0" ngbDropdownToggle><i
+                                class="bi bi-person-circle" style="font-size: 4vh"></i></button>
+                        <div ngbDropdownMenu>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-3 d-flex justify-content-center">
+                                        <div class="circle">{{photo}}</div>
+                                        <!-- <i class="bi bi-person-circle" style="font-size: 3vw"></i> -->
+                                    </div>
+                                    <div class="col-9 userAccount">
+                                        <span class="fw-bold">{{firstName}} {{lastName}}</span>
+                                        <br>
+                                        <p>{{email}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                            <button (click)="navigateToAccountSettings()" ngbDropdownItem><span>Account settings</span></button>
+                            <button ngbDropdownItem (click)="navigateToMyProjects()"><span>My projects</span></button>
+                            <button ngbDropdownItem>
+                                <div class="container">
+                                    <div class="row"  (click)="onChangeLanguage()">
+                                        <div class="col-6 d-flex justify-content-start g-0">
+                                            <span class="">Language</span>
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-end">
+                                            <span class="text-uppercase" >
+                                                {{selectedLang}} <i class="bi bi-translate"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </button>
+                            <button ngbDropdownItem (click)="onSignOut()"><span>Sign out</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row header text-white shadow-lg">
+        <div class="col-12">
+            <h4>Public profile</h4>
+            <p>Add information about yourself</p>
+        </div>
+    </div>
+    <div class="row formRow">
+        <div class="col-12">
+            <form [formGroup]="form">
+                <div class="input-group">
+                    <input type="text" class="form-control" formControlName="firstName" placeholder="First name">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" formControlName="lastName" placeholder="Last name">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

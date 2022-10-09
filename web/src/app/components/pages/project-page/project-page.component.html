@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container-fluid" style="height: calc(100vh - 58px);">
+    <div class="container shadow-lg">
+        <div class="row">
+            <div class="col-3 shadow-lg" style="height: calc(100vh - 58px);">
+
+            </div>
+            <div class="col-9">
+                    <div class="row header text-white shadow-lg">
+                        <div class="col-12">
+                           <h4>{{project.projectName}}</h4>
+                        </div>
+                    </div>
+                    <div class="row board">
+                        <div class="col-12 text-white">
+                            <form>
+                                <div class="mb-3 row">
+                                  <div class="col-xs-3 col-sm-auto">
+                                    <input id="table-filtering-search" class="form-control" type="text" placeholder="Search" [formControl]="filter">
+                                  </div>
+                                </div>
+                              </form>
+
+                            <table class="table table-striped text-white">
+                                <thead>
+                                <tr>
+                                  <th scope="col" class="tableColumn" >Todo</th>
+                                  <th scope="col" class="tableColumn" >Started</th>
+                                  <th scope="col" class="tableColumn" >Finished</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let task of tasks | async;">
+                                  <td>
+                                    <ngb-highlight [result]="task.name" [term]="filter.value"></ngb-highlight>
+                                  </td>
+                                  <td><ngb-highlight [result]="task.name | number" [term]="filter.value"></ngb-highlight></td>
+                                  <td><ngb-highlight [result]="task.name | number" [term]="filter.value"></ngb-highlight></td>
+                                </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>                
+        </div>
+    </div>
+</div>

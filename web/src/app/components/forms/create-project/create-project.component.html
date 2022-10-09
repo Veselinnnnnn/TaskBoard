@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <h1>Create Project</h1>
+        </div>
+    </div>
+    <hr>
+    <div class="row rowContent">
+        <div class="col-12">
+            <form [formGroup]="form">
+                <div class="input-group">
+                    <input type="text" class="form-control" formControlName="projectName" placeholder="Project name">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row rowContent">
+        <div class="col-12">
+            <button class="btn btn-primary" (click)="createProjectButton()">Create project</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="whiteBackground bg-white">
+            <img class="imageLogo bg-white" src="../../assets/images/SignIn.png" alt="TaskBoard logo">
+            <div class="d-flex justify-content-around">
+                <div class="col-10">
+                    <form [formGroup]="form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" formControlName="email" placeholder="Email">
+                            </div>
+                            <div *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched"
+                                class="errors text-danger">
+                                The field is required!
+                            </div>
+                            <div *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched"
+                                class="errors text-danger">
+                                Invalid email
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group ">
+                                <input type="password" class="form-control" formControlName="password"
+                                    placeholder="Password">
+                            </div>
+                            <div *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched"
+                                class="errors text-danger">
+                                The field is required!
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row rowText pt-1 justify-content-around">
+                <div class="col-10">
+                    <p>No account? <a routerLink="/signUp" class="text-decoration-none">Create one!</a></p>
+                </div>
+            </div>
+            <div class="row pt-1 justify-content-around">
+                <div class="col-10 d-flex justify-content-end">
+                    <button autofocus class="btn btn-primary" (click)="signIn()">
+                        Sign in
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="whiteBackgroundOtherOptions">
+            <p><i class="bi bi-key"></i> Other sign in options</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+*{
+    user-select: none;
+}
+.closeBtn{
+    font-size:2vw;
+}
+.header{
+    margin-top:2.2vh;
+    margin-left:1vw;
+}
+.col-3{
+    cursor:pointer;
+}
+.col-3:focus{
+    outline: 2px solid black;
+}
+
+
+.langRow{
+    padding-bottom: 2vh;
+}
+.selectedLang{
+    outline:2px solid black;
+}

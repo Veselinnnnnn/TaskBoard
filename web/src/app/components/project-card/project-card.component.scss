@@ -1,0 +1,39 @@
+.wholeCard{
+    margin-top:2vh;
+    cursor: pointer;
+}
+hr{
+    margin-bottom:-1vh;
+}
+
+h6{
+    // font-size:1vw;
+    font-size: 20px;
+    margin-bottom: -0.5vh;
+}
+
+small{
+    color:darkgray;
+    // font-size: 0.6vw;
+    font-size: 13px;
+}
+
+.progress{   
+    margin-top: 2vh;
+    height: 1vh;
+}
+
+p{
+    color: darkgray;
+    // font-size:0.6vw;
+    font-size:13px;
+    margin-bottom:-1.5vh;
+}
+
+.text {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }

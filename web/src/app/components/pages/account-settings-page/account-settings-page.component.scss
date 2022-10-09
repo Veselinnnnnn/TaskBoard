@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    min-height: 100%;
+    background: linear-gradient(0.375turn, #121212, #301934, #290916);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    user-select: none;
+    height: 100vh;
+    min-height: 200px;
+}
+
+
+.circle {
+    width: 8vw;
+    height: 16vh;
+    line-height: 8vh;
+    border-radius: 50%;
+    font-size: 2vw;
+    color: white;
+    text-align: center;
+    background: #36454F;
+    margin-left:7vw;
+}
+
+.circle p{
+    padding-top: 4vh;
+    font-size:3.5vw;
+}
+// .container{
+//     padding-top:10vh;
+// }
+
+.fullName{
+    padding-top:3vh;
+    padding-left:6vw;
+    font-size: 1.1vw;
+}
+.content{
+    align-items: center;
+}

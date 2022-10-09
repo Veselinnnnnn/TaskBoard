@@ -1,0 +1,51 @@
+.circle {
+    width: 8vw;
+    height: 16vh;
+    line-height: 8vh;
+    border-radius: 50%;
+    font-size: 2vw;
+    color: white;
+    text-align: center;
+    background: #36454F;
+    // margin-left: 7vw;
+    margin-top: 10vh;
+}
+
+.circle p {
+    padding-top: 4vh;
+    font-size: 3.5vw;
+}
+
+// .container{
+//     padding-top:10vh;
+// }
+
+.fullName {
+    padding-top: 3vh;
+    
+    text-align: center;
+    // padding-left: 6vw;
+    font-size: 1.1vw;
+}
+
+// .nav {
+//     padding-left: 5vw;
+// }
+
+.nav-tabs .nav-item .nav-link {
+    background-color: transparent;
+    color: white;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+    color: #4285F4;
+}
+
+h5{
+    font-size: 1.25vw;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+}

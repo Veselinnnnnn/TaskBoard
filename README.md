@@ -81,7 +81,7 @@ The solution should be have the following layers:
 
 1. Frontend - a web-based application meeting the following requirements:
 	- Responsive - a user should be able to work without losing functionality on an average tablet/phone
-	- HTML 5, CSS/SCSS, Bootstrap, Angular which TypeScripit
+	- HTML 5, CSS/SCSS, Bootstrap, Angular which TypeScripit/JavaScript
 2. Backend - an API application meeting the following requirements:
 	- RESTful - should follow the best practices:
 	- Problem Details - error handling should be implemented with [RFC 7807](https://tools.ietf.org/html/rfc7807)

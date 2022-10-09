@@ -1,6 +1,6 @@
 # TaskBoard
 
-## !IMPORTANT!
+## !Important!
 The project is in its initial stage. In the near future i'll be adding new features and upgrading the old one to be more optimal.
 
 

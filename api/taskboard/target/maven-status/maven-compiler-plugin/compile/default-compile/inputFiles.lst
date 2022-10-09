@@ -1,0 +1,17 @@
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\service\TaskService.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\model\entities\Project.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\repository\ProjectRepository.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\controller\ProjectController.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\config\CorsConfing.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\controller\UserController.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\model\entities\User.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\controller\TaskController.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\model\enums\TaskType.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\service\UserService.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\repository\UserRepository.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\model\Dtos\TaskDto.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\service\ProjectService.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\repository\TaskRepository.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\model\Dtos\ProjectDto.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\TaskboardApplication.java
+C:\Users\Veskou\Desktop\TaskBoard\api\taskboard\src\main\java\com\taskboard\taskboard\model\entities\Task.java

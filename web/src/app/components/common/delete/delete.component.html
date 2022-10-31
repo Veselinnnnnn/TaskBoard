@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="text-center pt-4 ">
+        <h3 *ngIf="isItTask === false">{{"DELETE.TITLE_PROJECT"|translate}}</h3>
+        <h3 *ngIf="isItTask === true">{{"DELETE.TITLE_TASK"|translate}}</h3>
+        <hr class="pb-2">
+        <p *ngIf="isItTask === false" class="pb-3">{{"DELETE.DELETE_PROJECT"|translate}}</p>
+        <p *ngIf="isItTask === true" class="pb-3">{{"DELETE.DELETE_TASK"|translate}}</p>
+        <div class="d-flex justify-content-around pb-3">
+            <button class="btn btn-danger " (click)="CloseModal()">{{"COMMON.CANCEL_BUTTON"|translate}}</button>
+            <button class="btn btn-primary" (click)="DeleteElement()">{{"COMMON.DELETE_BUTTON"|translate}}</button>
+        </div>
+    </div>
+</div>

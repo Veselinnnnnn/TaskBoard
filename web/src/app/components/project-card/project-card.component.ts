@@ -11,6 +11,7 @@ import { RequestService } from '../../services/request.service';
 export class ProjectCardComponent implements OnInit {
 
   @Input() project: ProjectModel = new ProjectModel();
+  @Input() userId!: number;
 
   constructor(
     private router: Router
@@ -21,6 +22,6 @@ export class ProjectCardComponent implements OnInit {
   
   //  Method which navigate user to page with full information about this project and his taskboard
   public openProject(){
-    this.router.navigateByUrl('/project',{state:{signedIn:true,project:this.project}});
+    this.router.navigateByUrl('/project',{state:{signedIn:true,project:this.project,userId : this.userId}});
   }
 }

@@ -4,5 +4,16 @@
         "SAVE_BUTTON" : "Запази",
         "CANCEL_BUTTON" : "Откажи",
         "OK_BUTTON":"ОК"
+    },
+    "DELETE":{
+        "DELETE_TITLE_TASK": "Изтриване на задача",
+        "DELETE_TITLE_PROJECT": "Изтриване на проект",
+        "DELETE_TASK":"Сигурни ли сте, че искате да изтриете тази задача?",
+        "DELETE_PROJECT" : "Сигурни ли сте, че искате да изтриете този проект?"
+
+    },
+    "COMMON":{
+        "CANCEL_BUTTON" : "Откажи",
+        "DELETE":"Изтриване"
     }
 }

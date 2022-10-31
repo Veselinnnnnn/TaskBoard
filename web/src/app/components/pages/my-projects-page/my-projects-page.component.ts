@@ -12,7 +12,7 @@ import { CreateProjectComponent } from '../../forms/create-project/create-projec
 })
 export class MyProjectsPageComponent implements OnInit {
   public signIn: boolean = window.history.state.signedIn || false;
-  private userId: number = window.history.state.userId || null;
+  public userId: number = window.history.state.userId || null;
   public projects: ProjectModel[] = [];
 
   constructor(
@@ -29,7 +29,7 @@ export class MyProjectsPageComponent implements OnInit {
 
   //  Method sends http get request to get all data from project table in database
   public getProjects():void{
-    this.requestService.getAll(ProjectModel.url).subscribe(
+    this.requestService.getAllProjects(ProjectModel.url).subscribe(
       (response: ProjectModel[])=>{
         this.projects = response;
       },

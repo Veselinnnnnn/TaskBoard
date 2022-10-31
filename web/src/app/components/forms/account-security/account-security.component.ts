@@ -1,16 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { UserModel } from 'src/app/models/user/user.model';
 import { RequestService } from 'src/app/services/request.service';
 import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  selector: 'app-account-security',
+  templateUrl: './account-security.component.html',
+  styleUrls: ['./account-security.component.scss']
 })
-export class ProfileComponent implements OnInit {
-  // @Input() userId!: number;
+export class AccountSecurityComponent implements OnInit {
   public userId = Number(localStorage.getItem("id"));
   public userModel!: UserModel;
   public form!: FormGroup;

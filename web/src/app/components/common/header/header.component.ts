@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
+import { UserModel } from 'src/app/models/user/user.model';
 import {LangComponent} from '../lang/lang.component'
 
 @Component({
@@ -17,7 +18,8 @@ export class HeaderComponent implements OnInit {
   public lastName:string = localStorage.getItem('lastName') || "";
   public email: string = localStorage.getItem('email')|| "";
   public selectedLang!:string;
-  public photo: string = this.firstName.charAt(0)+this.lastName.charAt(0);
+  public photo: string = this.firstName.charAt(0)+this.lastName.charAt(0) || "";
+
 
   constructor(
     public translate: TranslateService,
@@ -55,7 +57,7 @@ export class HeaderComponent implements OnInit {
 
   //  Navigate user to Account Settings page
   public navigateToAccountSettings(){
-    this.router.navigateByUrl('/accountSettings',{state:{signedIn:true}})
+    this.router.navigateByUrl('/accountSettings',{state:{signedIn:true,userId:this.userId}})
   }
 
   //  Open a modal to change language 

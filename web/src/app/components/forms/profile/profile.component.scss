@@ -1,22 +1,30 @@
 h4{
-    padding-left: 27vw;
-    padding-top: 5vh;
-    font-size:1.5vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 4em;
+    font-size:1.5rem;
 }
 p{
-    padding-left:24vw;
-    font-size:1.1vw;
+    display: flex;
+    justify-content: center;
+    font-size:1rem;
 }
 .formRow{
     padding-top:5vh;
 }
 .input-group{
-    padding-left: 8vw;
-    padding-top:3vh;
-    width:55vw;
+    padding: 1em 5em;
+    // padding-top:3vh;
+    // width:55vw;
 }
 
 
 input[type=text] {
-    font-size: 1vw;
+    font-size: 1.125rem;
+}
+
+.button-position{
+    display: flex;
+    justify-content: end;
+    padding: 2em 5em;
 }

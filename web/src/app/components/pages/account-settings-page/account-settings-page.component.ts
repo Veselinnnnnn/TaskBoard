@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileComponent } from '../../forms/profile/profile.component';
 
 @Component({
   selector: 'app-account-settings-page',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account-settings-page.component.scss']
 })
 export class AccountSettingsPageComponent implements OnInit {
+  public userId = window.history.state.userId;
   public firstName: string =localStorage.getItem('firstName') || "";
   public lastName: string =localStorage.getItem('lastName') || "";
   public email: string =localStorage.getItem('email') || "";
@@ -16,6 +18,5 @@ export class AccountSettingsPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    localStorage.setItem('flag','true')
   }
 }

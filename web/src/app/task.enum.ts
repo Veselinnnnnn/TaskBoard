@@ -1,5 +1,5 @@
 export enum TaskEnum{
-    TODO,
-    STARTED,
-    FINISHED
+    TODO = "TODO",
+    STARTED = "STARTED",
+    FINISHED = "FINISHED"
 }

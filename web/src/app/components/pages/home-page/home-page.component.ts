@@ -9,11 +9,8 @@ import { LangComponent } from '../../common/lang/lang.component';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(
-    private modal:NgbModal
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-    localStorage.removeItem('flag')
   }
 }

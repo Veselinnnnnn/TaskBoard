@@ -7,6 +7,7 @@ import { ProfileComponent } from './components/forms/profile/profile.component';
 import { SignInComponent } from './components/forms/sign-in/sign-in.component';
 import { SignUpComponent } from './components/forms/sign-up/sign-up.component';
 import { ProjectPageComponent } from './components/pages/project-page/project-page.component';
+import { AccountSecurityComponent } from './components/forms/account-security/account-security.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   {
     path: 'accountSettings', component: AccountSettingsPageComponent,
     children: [
-      { path: 'edit-profile', component: ProfileComponent }
+      { path: 'edit-profile', component: ProfileComponent },
+      { path: 'account-security', component: AccountSecurityComponent }
     ]
   },
   { path: 'my-projects', component: MyProjectsPageComponent },

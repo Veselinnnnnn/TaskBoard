@@ -1,9 +1,37 @@
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <h1>{{tasks.name}}</h1>
-            <hr>
-            <p>{{tasks.taskOwner}}</p>
+    <div class="row headerRow shadow-lg d-flex">
+        <div class="col-4"></div>
+        <div class="col-4 headerColumn d-flex justify-content-center">
+            <h3>{{task.name}}</h3>
         </div>
+        <div class="col-4 d-flex justify-content-end g-0">
+            <button class="btn text-secondary border-0 btnClose"><i class="bi bi-x"></i></button>
+        </div>
+    </div>
+    <div class="row bodyRow">
+        <div class="col-12">
+            <p>Created by: {{task.taskOwner}}</p>
+
+            <label>Description:</label>
+            <textarea class="form-control">{{task.description}}</textarea>
+
+            <p *ngIf="task.parentTaskId != 0">Subtask of {{task.parentTaskId}}</p>
+
+            <div class="row typeRow">
+                <div class="col-3">
+                    <label for="">Task type: </label>
+                </div>
+                <div class="col-9">
+                    <select class="form-select">
+                        <option [selected]="task.type == enum.TODO" value="TODO">Todo</option>
+                        <option [selected]="task.type == enum.STARTED" value="STARTED">Started</option>
+                        <option [selected]="task.type == enum.FINISHED" value="FINISHED">Finished</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row btnRow">
+
     </div>
 </div>

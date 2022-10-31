@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row header text-white shadow-lg">
+        <div class="col-12">
+            <h4>Account</h4>
+            <p>Edit your account settings and change your password here.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 formStyle">
+            <form [formGroup]="form">
+                <div class="formRow">
+                    <label class="text-white fw-bold">Email:</label>
+                    <div class="emailInput">
+                        <span class="asd2">Your email address is:<b class="text-dark mx-2">{{this.userModel.email}}</b></span>
+                        <button class="btn btn-secondary border-left editEmail" type="button"><i class="bi bi-pencil-fill"></i></button>
+                    </div>
+                </div>
+                <hr class="text-white">
+                <div class="formRow">
+                    <label class="text-white fw-bold">Password:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" formControlName="currentPassword"
+                            placeholder="Enter current password">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" formControlName="newPassword"
+                            placeholder="Enter new password">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" formControlName="reTypeNewPassword"
+                            placeholder="Re-type new password">
+                    </div>
+                </div>
+            </form>
+            <div class=" button-position">
+                <button class="btn btn-primary" (click)="onClickSaveData()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-toasts></app-toasts>

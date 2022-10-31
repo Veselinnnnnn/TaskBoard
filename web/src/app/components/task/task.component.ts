@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TaskModel } from 'src/app/models/task.model';
+import { TaskEnum } from 'src/app/task.enum';
 
 @Component({
   selector: 'app-task',
@@ -7,12 +8,17 @@ import { TaskModel } from 'src/app/models/task.model';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
+  @Input() task!: TaskModel;
+  public enum = TaskEnum;
+  
 
-  @Input() tasks!: TaskModel;
-
-  constructor() { }
+  constructor() {
+    console.log("new");
+    console.log("task: "+ this.task);
+   }
 
   ngOnInit(): void {
+    
   }
 
 }

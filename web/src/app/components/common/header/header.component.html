@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class="box">
+    <div class="shadow-box">
         <div class="container">
             <div class="row ">
                 <div class="col-10">
@@ -8,20 +8,21 @@
                         <h4 class="mx-2">TaskBoard</h4>
                     </div>
                 </div>
-                <div class="col-2 ">
-                    <div *ngIf="signIn===false" class="d-flex justify-content-end ">
-                        <button routerLink="/signIn" class="btn border-0 text-white">
-                            <h6>Sign in <i class="bi bi-door-open"></i></h6>
+                <div class="col-2">
+                    <div *ngIf="signIn===false" class="d-flex justify-content-end rightContent">
+                        <button routerLink="/signIn" class="btn border-0 text-white d-flex">
+                            <h6>Sign in</h6>
+                            <i class="bi bi-door-open"></i>
                         </button>
                     </div>
-                    <div *ngIf="signIn === true" ngbDropdown class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-transparent text-white border-0" ngbDropdownToggle><i
-                                class="bi bi-person-circle" style="font-size: 4vh"></i></button>
-                        <div ngbDropdownMenu>
+                    <div *ngIf="signIn === true" ngbDropdown class="d-flex justify-content-end" placement="bottom-right">
+                        <button type="button" class="btn btn-transparent text-white border-0"  ngbDropdownToggle id="dropdownBasic1"><i
+                                class="bi bi-person-circle account-image"></i></button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-3 d-flex justify-content-center">
-                                        <div class="circle">{{photo}}</div>
+                                        <!-- <div class="circle">{{photo}}</div> -->
                                         <!-- <i class="bi bi-person-circle" style="font-size: 3vw"></i> -->
                                     </div>
                                     <div class="col-9 userAccount">
@@ -36,7 +37,7 @@
                             <button ngbDropdownItem (click)="navigateToMyProjects()"><span>My projects</span></button>
                             <button ngbDropdownItem>
                                 <div class="container">
-                                    <div class="row"  (click)="onChangeLanguage()">
+                                    <div class="row language-section"  (click)="onChangeLanguage()">
                                         <div class="col-6 d-flex justify-content-start g-0">
                                             <span class="">Language</span>
                                         </div>

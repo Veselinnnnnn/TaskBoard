@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="container-fluid d-flex justify-content-center" style="height: calc(100vh - 58px);">
+<div class="container-fluid d-flex justify-content-center" style="height: calc(100vh);">
     <div class="container shadow-lg">
         <div class="row titleProjectsRows">
             <div class="col-12 d-flex justify-content-center">
@@ -14,9 +14,9 @@
             </div>
         </div>
         <hr class="text-white">
-        <div class="row titleProjectsRows">
+        <div class="row">
             <div *ngFor="let project of projects" class="col-4 col-md-4 col-xl-2">
-                <app-project-card [project]="project"></app-project-card>
+                <app-project-card [project]="project" [userId]="userId"></app-project-card>
             </div>
         </div>
     </div>

@@ -1,13 +1,19 @@
-*{
+* {
     z-index: 2;
     user-select: none;
+
 }
 
-.container-fluid{
+// body {
+//     font-size: 10px;
+// }
+
+.container-fluid {
     background: linear-gradient(0.25turn, #4169e1, #710193);
+    position: fixed;
 }
 
-.box:before {
+.shadow-box:before {
     content: "";
     z-index: 1;
     position: absolute;
@@ -16,51 +22,106 @@
     bottom: 0;
     left: 0;
     background: linear-gradient(0.25turn, #4169e1, #710193);
-    transform: translate3d(0vw, -66vh,0px) scale(1,0.5);
+    transform: translate3d(0vw, 3vh, 0px) scale(1, 0.5);
     filter: blur(25px);
 }
 
-h4{
-    font-size:1.55vw;
-    padding-top:1%;
+.logo {
+    width: 55px;
 }
 
-h6{
-    font-size:1vw;
-    padding-top:1.4vh;
+.leftContent {
+    margin: 0.25em 0;
 }
 
-.logo{
-    width:3vw;
+.rightContent {
+    margin: 0.45em 0;
 }
-.leftContent{
-    padding-bottom: 0.7vh;
-    padding-top: 0.7vh;
+
+h4 {
+    display:block;
+    font-size: 1.5rem;
+    padding-top: 0.55em;
 }
+
+h6 {
+    font-size: 1.25rem;
+    margin: 0.3em
+}
+
+i {
+    font-size: 1.5rem;
+}
+
+
+@media(max-width: 1000px) {
+    h6 {
+        display: none;
+    }
+}
+
+// h6{
+//     padding-top:2em;
+//     background-col
+// }
+
+// h6{
+//     font-size:1vw;
+//     padding-top:1.4vh;
+// }
+
+// .logo{
+//     width:4%;
+// }
+// .leftContent{
+//     padding-bottom: 0.7vh;
+//     padding-top: 0.7vh;
+// }
 .dropdown-toggle::after {
     display:none;
 }
 .dropdown-menu {
-    width: 20vw !important;
+    width: 300px !important;
 }
 
-
+.account-image{
+    font-size:2.1rem;
+}
 .userAccount{
     padding-top:1.5vh
 }
 
-.dropdown-menu p{
-    font-size: 0.8vw;
-}
+// .dropdown-menu p{
+//     // font-size: 0.8vw;
 
+// }
+
+// .circle {
+//     // width: 10vw;
+//     // height: 7.5vh;
+//     width: 50px;
+//     height: 50px;
+//     // line-height: 8vh;
+//     border-radius: 50%;
+//     // font-size: 2vw;
+//     color: #fff;
+//     text-align: center;
+//     background: #000;
+//     margin-top:0.5em;
+// }
 .circle {
-    width: 10vw;
-    height: 7.5vh;
-    line-height: 8vh;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
-    font-size: 2vw;
-    color: #fff;
+    color:white;
+    background: black;
+    display: inline-block;
+    padding-top:0.3em;
+    margin:0.4em 0 ;
+    font-size: 1.5rem;
     text-align: center;
-    background: #000;
-    // padding-top
   }
+
+.language-section{
+    align-items: center;
+}

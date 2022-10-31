@@ -1,47 +1,123 @@
 <app-header></app-header>
-<div class="container-fluid" style="height: calc(100vh - 58px);">
-    <div class="container shadow-lg">
-        <div class="row">
-            <div class="col-3 shadow-lg" style="height: calc(100vh - 58px);">
-
-            </div>
-            <div class="col-9">
-                    <div class="row header text-white shadow-lg">
-                        <div class="col-12">
-                           <h4>{{project.projectName}}</h4>
-                        </div>
-                    </div>
-                    <div class="row board">
-                        <div class="col-12 text-white">
-                            <form>
-                                <div class="mb-3 row">
-                                  <div class="col-xs-3 col-sm-auto">
-                                    <input id="table-filtering-search" class="form-control" type="text" placeholder="Search" [formControl]="filter">
-                                  </div>
-                                </div>
-                              </form>
-
-                            <table class="table table-striped text-white">
-                                <thead>
-                                <tr>
-                                  <th scope="col" class="tableColumn" >Todo</th>
-                                  <th scope="col" class="tableColumn" >Started</th>
-                                  <th scope="col" class="tableColumn" >Finished</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr *ngFor="let task of tasks | async;">
-                                  <td>
-                                    <ngb-highlight [result]="task.name" [term]="filter.value"></ngb-highlight>
-                                  </td>
-                                  <td><ngb-highlight [result]="task.name | number" [term]="filter.value"></ngb-highlight></td>
-                                  <td><ngb-highlight [result]="task.name | number" [term]="filter.value"></ngb-highlight></td>
-                                </tr>
-                                </tbody>
-                              </table>
-                        </div>
-                    </div>
-                </div>                
-        </div>
+<div class="container-fluid" Style="min-height:100vh;">
+  <div class="container" Style="min-height:100vh">
+    <div class="container text-white fixed-top shadow-lg sidebar">
+      <h2>asdasdasd</h2>
     </div>
+    <div class="container  text-white shadow-lg fixed-top taskboard g-0">
+      <div class="taskBoardHeader">
+        <h4>{{project.projectName}}</h4>
+      </div>
+      <div class="row taskBoardUtilities">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-4">
+              <input type="text" class="form-control" [(ngModel)]="searchText" placeholder="Search">
+              <!-- <h1>{{searchText}}</h1> -->
+              <!-- <input type="text" name="search" [(ngModal="searchText")] placeholder="Search"> -->
+            </div>
+            <div class="col-8 d-flex justify-content-end">
+              <button class="btn btn-success" (click)="addTaskButton(0,enum.TODO)">Add Task</button>
+            </div>
+          </div>
+          <div class="row taskboardTableHeader">
+            <div class="col-4 d-flex justify-content-center">
+              <h5>Todo</h5>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+              <h5>Started</h5>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+              <h5>Finished</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container text-white taskBoardTable shadow-lg">
+      <div class="row">
+        <div class="col-4 d-flex flex-column wholeColumn" cdkDropList #todoList="cdkDropList"
+          [cdkDropListData]="todoTask" [cdkDropListConnectedTo]="[startedList,finishedList]"
+          (cdkDropListDropped)="drop($event)">
+          <div *ngFor="let task of todoTask | searchFilter:searchText:['name']" cdkDrag class="columns">
+            <div class="d-flex task ">
+              <div class="col-10">
+                <h6>{{task.name}}</h6>
+                <div>{{task.taskOwner}}</div>
+              </div>
+              <div class="col-2 d-flex justify-content-center asd" (click)="DeleteTask(task.id)">
+                <button class="btn text-danger rounded-0 trashButton  "><i class="bi bi-trash3"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4 d-flex flex-column wholeColumn" cdkDropList #startedList="cdkDropList"
+          [cdkDropListData]="startedTask" [cdkDropListConnectedTo]="[todoList,finishedList]"
+          (cdkDropListDropped)="drop($event)">
+          <div *ngFor="let task of startedTask | searchFilter:searchText:['name'], let i =index;" cdkDrag
+            class="columns">
+
+
+            <div class="accordion">
+              <div class="card rounded-0">
+                <div class="card-header wholeCardHeader" [ngClass]="{'taskIsActive':checkStatus(task.id)}">
+                  <div class="row cardRow d-flex"(click)="onClickSelectTask(task.id)">
+                    <div class="col-10 task " >
+                      <h6>{{task.name}}</h6>
+                      <div>{{task.taskOwner}}</div>
+                    </div>
+                    <div class="col-2 d-flex flex-column justify-content-center g-0 task-buttons">
+                      <div placement="end-top" ngbDropdown>
+                        <button class="btn task-button border-0"  ngbDropdownToggle>
+                          <i class="bi bi-gear text-white"></i>
+                        </button>
+                        <div ngbDropdownMenu>
+                          <button ngbDropdownItem class="text-white" (click)="addTaskButton(task.id,task.type)"><i
+                              class="bi bi-plus-circle text-success me-2"></i>Create Subtask</button>
+                          <button ngbDropdownItem class="text-white" (click)="onClickSelectTask(task.id)"
+                            (click)="onClickShowModalWithInfo(task)"><i
+                              class="bi bi-pencil-square text-warning me-2"></i>Edit Task</button>
+                          <button ngbDropdownItem class="text-white" (click)="moveTask()"><i
+                              class="bi bi-arrow-right text-primary me-2"></i>Move Task</button>
+                          <button ngbDropdownItem class="text-white" (click)="DeleteTask(task.id)"><i
+                              class="bi bi-trash3 text-danger me-2"></i>Delete Task</button>
+                        </div>
+                      </div>
+                      <div>
+                        <button class="btn task-button border-0" [disabled]="!subTaskExist(task.id)"
+                          (click)="collapse.toggle()" (click)="getAllSubTasks(task.id)"
+                          [attr.aria-expanded]="!taskInfo[i].isCollapsed" aria-controls="collapseExample">
+                          <i class="bi bi-chevron-compact-down text-primary"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div #collapse="ngbCollapse" [(ngbCollapse)]="taskInfo[i].isCollapsed" class="collapse show">
+                  <div class="card-body taskIsActive">
+                    <div *ngFor="let subTask of subTasks">
+                      <h6>{{subTask.name}}</h6>
+                      <div>{{subTask.taskOwner}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 d-flex flex-column " Style="margin-top:3vh;" cdkDropList #finishedList="cdkDropList"
+        [cdkDropListData]="finishedTask" [cdkDropListConnectedTo]="[startedList,todoList]"
+        (cdkDropListDropped)="drop($event)">
+        <div *ngFor="let task of finishedTask | searchFilter:searchText:['name']" cdkDrag class="columns">
+
+          <div class="task">
+            <h6>{{task.name}}</h6>
+            <div>{{task.taskOwner}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

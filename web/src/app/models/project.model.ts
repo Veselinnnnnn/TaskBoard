@@ -4,6 +4,7 @@ export class ProjectModel {
 
     public static readonly url = '/my-projects';
     
+    public id!: number;
     public projectName : string | undefined;
     public members : string | undefined;
     public tasks: TaskModel[] | undefined;

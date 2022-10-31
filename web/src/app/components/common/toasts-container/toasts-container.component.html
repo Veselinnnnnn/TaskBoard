@@ -9,5 +9,6 @@
   <ng-template [ngTemplateOutlet]="toast.textOrTpl"></ng-template>
 </ng-template>
 
-<ng-template #text><span class="fw-bold">Welcome, {{ toast.textOrTpl }}! </span>You have successfully signed in.</ng-template>
+<!-- <ng-template #text><span class="fw-bold">Welcome, {{ toast.textOrTpl }}! </span>You have successfully signed in.</ng-template> -->
+<ng-template #text>{{toast.textOrTpl}}</ng-template>
 </ngb-toast>

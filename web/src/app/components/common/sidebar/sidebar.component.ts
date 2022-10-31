@@ -9,6 +9,7 @@ export class SidebarComponent implements OnInit {
   public firstName: string =localStorage.getItem('firstName') || "";
   public lastName: string =localStorage.getItem('lastName') || "";
   public email: string =localStorage.getItem('email') || "";
+  public userId: number = 0;
 
   public photo: string = this.firstName.charAt(0)+this.lastName.charAt(0);
   constructor() { }

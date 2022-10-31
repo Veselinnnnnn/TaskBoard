@@ -1,35 +1,241 @@
+* {
+    user-select: none;
+}
+
 .container-fluid {
     background: linear-gradient(0.375turn, #121212, #301934, #290916);
+    background-attachment: fixed
 }
 
-h4{
-    text-align: center;
-    padding-top: 5vh;
-    padding-bottom:3vh;
-    font-size:1.5vw;
-}
-p{
-    padding-left:24vw;
-    font-size:1.1vw;
-}
-.formRow{
-    padding-top:5vh;
-}
-.input-group{
-    padding-left: 8vw;
-    padding-top:3vh;
-    width:55vw;
+.sidebar {
+    margin-left: 6.5vw;
+    margin-top: 57.5px;
+    height: 100vh;
+    width: 20vw;
+    color: white;
+    background-color: #1f1420;
+    z-index: 1;
+    border-right: solid 1px white;
 }
 
+.taskboard {
+    margin-top: 57.5px;
+    margin-left: 26.5vw;
+    width: 64.5vw;
+    background: linear-gradient(#1f1420, #1f1420, #2f152d);
+    z-index: 1;
+}
+
+.taskBoardHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3vh;
+    background-color: #1f1420;
+}
+
+// .taskBoardContent{
+//     margin-left: 20.45vw;
+//     width: 64vw;
+//     z-index: 3;
+// }
+
+.taskBoardUtilities {
+    margin-top: 3vh;
+    margin-left: 0vw;
+    width: 64.5vw;
+    z-index: 0;
+}
+
+.taskboardTableHeader {
+    margin-top: 3vh;
+    padding-bottom: 2vh;
+    border-bottom: solid white;
+}
+
+.taskBoardTable {
+    margin-left: 18.8vw;
+    padding-top: 35vh;
+    width: 64.5vw;
+}
+
+.wholeColumn {
+    padding-top: 3vh;
+
+    min-height: 65vh;
+    border-right: solid 1px white;
+}
+
+h4 {
+    font-size: 2vw;
+}
+
+p {
+    padding-left: 24vw;
+    font-size: 1.1vw;
+}
 
 input[type=text] {
     font-size: 1vw;
 }
 
-.board{
-    margin-top:2vh;
+.columns {
+    margin-bottom: 3vh;
+    cursor: pointer;
 }
 
-.tableColumn{
-    text-align: center;
+
+.card {
+    background-color: transparent;
+}
+
+.wholeCardHeader {
+    border: 1px solid white;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.task-buttons {
+    align-items: center;
+    display: none;
+}
+
+.task-button{
+    display:none;
+}
+
+.wholeCardHeader:hover {
+
+    // .trashButton{
+    //     display: block;
+    //     border-left: #4169e1 solid 1px;
+    //     background-color: #332D2D;
+    // }
+    // .trashButtons{
+    //     display: block;
+    // }
+    // .task-buttons{
+    //     display: block;
+    // }
+    // .task-button{
+    //     display: block;
+    // }
+    // .task-buttons {
+    //     display: block;
+    //     background-color: #332D2D;
+    //     border-left: #4169e1 solid 1px;
+    // }
+
+    border-image-slice: 1;
+    border-image-source:linear-gradient(to left, #4169e1, #710193);
+}
+
+.cardRow {
+    margin: -1vh -1vw;
+}
+
+.activeCard {
+    display: block;
+    border: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #4169e1, #710193);
+}
+
+.activeGear{
+    .task-button{
+        display: block;
+    }
+    .task-buttons {
+        display: block;
+        background-color: #332D2D;
+        border-left: #4169e1 solid 1px;
+    }
+}
+
+.task {
+    padding-top: 2vh;
+    padding-left: 1.5vw;
+    padding-bottom: 2vh;
+}
+
+
+
+// .task:hover{
+//     // .trashButton{
+//     //     display: block;
+//     //     border-left: #4169e1 solid 1px;
+//     //     background-color: #332D2D;
+//     // }
+//     // .trashButtons{
+//     //     display: block;
+//     // }
+//     // .task-buttons{
+//     //     border-left:#4169e1 solid 1px;
+//     //     background-color: #332D2D;
+//     // }
+//     .task-button{
+//         display: block;
+//         background-color: #332D2D;
+//     }
+//     border-image-slice: 1;
+//     border-image-source:linear-gradient(to left, #4169e1, #710193);
+// }
+
+
+
+// .task-button{
+//     border-left: #4169e1 solid 1px;
+// }
+
+// .trashButton{
+//     display: none;
+//     align-items:center;
+//     margin-right: -0.9vw;
+// }
+
+// .trashButtons{
+//     display: none;
+// }
+
+h5 {
+    font-size: 1.25vw;
+}
+
+
+.dropdown-menu {
+    margin-left: 30px !important;
+    margin-top:-5px !important;
+    background-color: #332D2D;
+}
+.dropdown-item:hover{
+    background-color:#181818;
+
+}
+
+.taskIsActive{
+    border: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #4169e1, #710193);
+    .task-button{
+        display: block;
+    }
+    .task-buttons {
+            display: block;
+            background-color: #332D2D;
+            border-left: #4169e1 solid 1px;
+        }
+}
+
+.gearIsClicked{
+    
+    // .task-buttons {
+    //     display: block;
+    //     background-color: #332D2D;
+    //     border-left: #4169e1 solid 1px;
+    // }
+
+    background-color: #332D2D;
+    border-left: #4169e1 solid 1px;
 }

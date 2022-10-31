@@ -13,7 +13,7 @@ import { UserService } from '../../../services/user.service';
 })
 export class SignInComponent implements OnInit {
   private model: SignInModel = new SignInModel();
-
+  
   public form!: FormGroup;
 
   constructor(
@@ -35,12 +35,15 @@ export class SignInComponent implements OnInit {
       this.model = this.fillModel();
       this.userService.signIn(this.model).subscribe(
       (response: any) => {
+        console.log(response);
         localStorage.setItem('firstName',response.firstName);
         localStorage.setItem('lastName',response.lastName);
         localStorage.setItem('email',response.email);
-        localStorage.setItem('id',response.id);
+        localStorage.setItem("id",response.id);
+        // localStorage.setItem('signedIn','true');
         this.router.navigateByUrl('',{state:{signedIn:true,userId:response.id}});
-        this.toastService.show(response.firstName, { classname: 'bg-success text-light'});
+        // this.router.navigateByUrl('');
+        this.toastService.show("Welcome, "+response.firstName+"! You have successfully signed in.", { classname: 'bg-success text-light'});
       }, (error: HttpErrorResponse) => {
         alert(error.message);
       });

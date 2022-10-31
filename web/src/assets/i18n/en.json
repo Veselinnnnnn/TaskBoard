@@ -4,5 +4,16 @@
         "SAVE_BUTTON" : "Запази",
         "CANCEL_BUTTON" : "Откажи",
         "OK_BUTTON":"ОК"
+    },
+    "DELETE":{
+        "TITLE_TASK": "Delete task",
+        "TITLE_PROJECT": "Delete project",
+        "DELETE_TASK":"Are you sure you want to delete permanently this task?",
+        "DELETE_PROJECT" : "Are you sure you want to delte permanently this project?"
+
+    },
+    "COMMON":{
+        "CANCEL_BUTTON" : "Cancel",
+        "DELETE_BUTTON":"Delete"
     }
 }

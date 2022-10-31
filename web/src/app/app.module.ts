@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -11,7 +11,6 @@ import { HeaderComponent } from './components/common/header/header.component';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { SignInComponent } from './components/forms/sign-in/sign-in.component';
 import { SignUpComponent } from './components/forms/sign-up/sign-up.component';
-import { TaskboardPageComponent } from './components/pages/taskboard-page/taskboard-page.component';
 import { ToastsContainerComponent } from './components/common/toasts-container/toasts-container.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LangComponent } from './components/common/lang/lang.component';
@@ -23,7 +22,13 @@ import { AccountSettingsPageComponent } from './components/pages/account-setting
 import { CreateProjectComponent } from './components/forms/create-project/create-project.component';
 import { ProjectPageComponent } from './components/pages/project-page/project-page.component';
 import { TaskComponent } from './components/task/task.component';
-
+import { CreateTaskComponent } from './components/forms/create-task/create-task.component';
+import { DragDropModule} from '@angular/cdk/drag-drop';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FilterPipe } from './pipes/filter.pipe';
+import { DeleteComponent } from './components/common/delete/delete.component';
+import { AccountSecurityComponent } from './components/forms/account-security/account-security.component';
 
 export function HttpLoaderFactory(http: HttpClient) : TranslateHttpLoader{
   return new TranslateHttpLoader(http,'./assets/i18n/','.json');
@@ -36,7 +41,6 @@ export function HttpLoaderFactory(http: HttpClient) : TranslateHttpLoader{
     HomePageComponent,
     SignInComponent,
     SignUpComponent,
-    TaskboardPageComponent,
     ToastsContainerComponent,
     LangComponent,
     SidebarComponent,
@@ -46,7 +50,11 @@ export function HttpLoaderFactory(http: HttpClient) : TranslateHttpLoader{
     AccountSettingsPageComponent,
     CreateProjectComponent,
     ProjectPageComponent,
-    TaskComponent, 
+    TaskComponent,
+    CreateTaskComponent,
+    FilterPipe,
+    DeleteComponent,
+    AccountSecurityComponent, 
   ],
   imports: [
     BrowserModule,
@@ -54,6 +62,8 @@ export function HttpLoaderFactory(http: HttpClient) : TranslateHttpLoader{
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
+    FormsModule,
+    DragDropModule,
     TranslateModule.forRoot({
       defaultLanguage:'en',
       loader:{
@@ -61,7 +71,9 @@ export function HttpLoaderFactory(http: HttpClient) : TranslateHttpLoader{
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    BrowserAnimationsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,11 @@
 package com.taskboard.taskboard.controller;
 
+import com.taskboard.taskboard.model.Dtos.TaskDto;
+import com.taskboard.taskboard.model.Dtos.UserDto;
+import com.taskboard.taskboard.model.entities.Task;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.taskboard.taskboard.model.entities.User;
@@ -41,6 +46,16 @@ public class UserController {
             throw new Exception("The user does not exist!");
         }
         return userObj;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "user/{id}")
+    public ResponseEntity<User> getOneUser(@PathVariable("id")Long id) {
+        return new ResponseEntity<>(this.userService.findUserById(id), HttpStatus.OK);
+    }
+
+    @RequestMapping(method = RequestMethod.PATCH, path = "user")
+    public ResponseEntity<User> updateUser(@RequestBody UserDto userDto) {
+        return new ResponseEntity<>(this.userService.updateUser(userDto), HttpStatus.OK);
     }
 
 }

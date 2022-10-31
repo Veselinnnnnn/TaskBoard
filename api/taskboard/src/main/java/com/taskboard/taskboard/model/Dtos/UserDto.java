@@ -10,12 +10,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class TaskDto {
+public class UserDto {
     private Long id;
-    private String name;
-    private String description;
-    private Long parentTaskId;
-    private TaskType type;
-    private Long projectId;
-    private Long userId;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
 }

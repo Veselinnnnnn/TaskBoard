@@ -20,7 +20,7 @@ public class Project {
     @Column(nullable = false,updatable = false)
     private Long id;
     private String projectName;
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "projectId")
     private Set<Task> tasks;
     @ManyToMany(cascade = { CascadeType.PERSIST,
     CascadeType.MERGE})

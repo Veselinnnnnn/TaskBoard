@@ -21,13 +21,13 @@ public class Task {
     private Long id;
     private String name;
     private String description;
-    @JsonIgnore
-    @OneToOne(fetch = FetchType.LAZY)
-    private Task parentTask;
+//    @JsonIgnore
+//    @OneToOne(fetch = FetchType.LAZY)
+    private Long parentTaskId;
     private TaskType type;
-    @JsonIgnore
-    @OneToOne(fetch = FetchType.LAZY)
-    private Project project;
+//    @JsonIgnore
+//    @OneToOne(fetch = FetchType.LAZY)
+    private Long projectId;
     private Long userId;
     private String taskOwner;
 
